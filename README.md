@@ -14,12 +14,12 @@ Doing this project allows the potential to create more robust models in identify
 
 Deforestation Activities that can be detected by our proof of concept are:
 
-- Forest Combustion
+- Wildfires
+- Slash and Burn
 - Agriculture
 - Mining
 - Weather (Hazy, Cloudy, Foggy, etc.)
 - Logging
-- Slash & Burn
 
 **However, the model is yet to be trained towards identifying anthropogenic and non-anthropogenic causes of Deforestation.*
 
