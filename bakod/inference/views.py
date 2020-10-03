@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 
+import json
+img_height, img_width= 128,128
 def index(request):
     context={'a':1}
     return render(request, 'upload.html', context)
