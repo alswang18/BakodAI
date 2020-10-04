@@ -1,0 +1,669 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+    background-color: #3CB371;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px #C4C4C4;
+}
+
+.logo {
+    font-family: 'Lora';
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    filter: invert(1);
+    width: 15px;
+    position: relative;
+    top: -20px;
+    left: -13px;
+}
+
+.models {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 5px 25px;
+    border: 3px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.models:hover {
+    background-color: #FFFFFF;
+    color: #3CB371;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 520px;
+    background: url('./images/michel-reyes-qhWhk2IN_Zc-unsplash\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 91px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.hero p {
+    font-family: "PT Sans";
+    font-style: italic;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.models-hidden{
+    display: none;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 10px 45px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color:#3CB371;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.summary img {
+    width: 400px;
+}
+
+.summary-details {
+    width: 400px;
+}
+
+.summary-details h5 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 60px;
+    color: #26201A;
+    margin: 0;
+}
+
+.summary-details p {
+    font-family: "PT Sans";
+    font-size: 24px;
+    line-height: 31px;
+    color: #26201A;
+    margin: 0;
+}
+
+.def {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3CB371;
+}
+
+.def h1 {
+    font-family: "Source Sans Pro";
+    font-style: italic;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 91px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 60px 0 0;
+}
+
+.def p {
+    width: 50%;
+    font-family: "PT Sans";
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 60px 0;
+}
+
+.un {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.un div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%
+}
+
+.un div p {
+    width: 80%;
+    font-family: "PT Sans";
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.un div p span {
+    font-weight: bold;
+    color:#3CB371;
+}
+
+.un img {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.activities h1 {
+    font-family: "Raleway";
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    color: #3CB371;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categories img {
+    width: 30%;
+    margin: calc(10% / 6);
+}
+
+.save {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.save-details h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 80%;
+    color: #000000;
+    margin: 0;
+}
+
+.save-details p {
+    width: 90%;
+    font-family: "PT Sans";
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    margin: 20px 0 0;
+}
+
+
+.save img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.access {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.access-details {
+    margin: 0 0 0 40px;
+}
+
+.access-details h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 80%;
+    color: #000000;
+}
+
+.access-details p {
+    width: 90%;
+    font-family: "PT Sans";
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    margin: 20px 0 0;
+}
+
+
+.access img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.code {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.code-details h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 80%;
+    color: #000000;
+    margin: 0;
+}
+
+.code-details p {
+    width: 90%;
+    font-family: "PT Sans";
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    margin: 20px 0 0;
+}
+
+
+.code img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: #3CB371;
+}
+
+footer p {
+    font-family: "PT Sans";
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 1000px){
+    .save {
+        flex-direction: column-reverse;
+    }
+
+    .save img, .save-details {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .save img {
+        margin-bottom: 30px;
+    }
+
+    .access {
+        flex-direction: column;
+    }
+
+    .access img, .access-details {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .access img {
+        margin-bottom: 30px;
+    }
+
+    .code {
+        flex-direction: column-reverse;
+    }
+
+    .code img, .code-details {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .code img {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .un {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .un img {
+        width: 250px;
+        margin: 40px auto 30px;
+    }
+
+    .un div {
+        width: 100%
+    }
+
+}
+
+@media screen and (max-width: 800px){
+
+    .summary {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .summary img {
+        width: 250px;
+        margin-bottom: 30px;
+    }
+
+    .summary-details {
+        width: 80%;
+    }
+
+    .summary-details h5 {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    
+    .summary-details p {
+        font-size: 19px;
+        line-height: 23px;
+    }
+    
+    .def h1 {
+        font-size: 47px;
+        line-height: 54px;
+        margin-bottom: 20px;
+    }
+
+    .def p {
+        width: 80%;
+    }
+
+    .activities h1 {
+        font-size: 25px;
+    }
+
+    .categories img {
+        width: 45%;
+        margin: calc(10% / 4);
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    nav {
+        justify-content: center;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+
+    .models {
+        display: none;
+    }
+
+    .models-hidden {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 52px;
+        line-height: 71px;
+    }
+
+    .hero p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .activities h1 {
+        font-size: 17px;
+    }
+
+    .categories img {
+        width: 95%;
+        margin: 2.5%;
+    }
+
+    .save-details h1, .access-details h1, .code-details h1  {
+        font-size: 27px;
+        line-height: 80%;
+    }
+    
+    .save-details p, .access-details p, .code-details p  {
+        width: 100%;
+        font-size: 15px;
+        line-height: 19px;
+    }
+    
+}
+
+@media screen and (max-width: 350px) {
+    .hero h1 {
+        font-size: 42px;
+        line-height: 51px;
+    }
+}
+
+/************************************************ UPLOAD PAGE *************************************************/
+
+.spacer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 30px);
+}
+
+.submit-card {
+    width: 80%;
+    border: 5px solid #3CB371;
+    padding: 20px 60px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 80px 0 10px;
+}
+
+.submit-heading {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 71px;
+    color: #3CB371;
+}
+
+.submit-card form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.input {
+    width: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.input h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3CB371;
+    margin: 0 50px 0 0;
+}
+
+.input div #fname {
+    display: none;
+}
+
+.input div label {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3CB371;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.input div label:hover {
+    text-decoration: underline;
+}
+
+.submit {
+    align-self: flex-end;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3CB371;
+    background-color: white;
+    padding: 5px 25px;
+    border: 5px solid #3CB371;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.submit:hover {
+    background-color: #3CB371;
+    color: #FFFFFF;
+}
+
+hr {
+    width: 100%;
+    height: 5px;
+    margin: 70px 0 50px;
+    background-color: #3CB371;
+}
+
+.chosen-img {
+    max-width: 100%;
+}
+
+.result {
+    width: 100%;
+}
+
+.result h2 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3CB371;
+}
+
+.result h2 span {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .submit-card {
+        width: 90%;
+    }
+
+    .submit-heading {
+        text-align: center;
+        font-size: 32px;
+        line-height: 51px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .submit-card form, .input {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input h1 {
+        display: none;
+    }
+
+    .input div label {
+        text-align: center;
+    }
+
+    .submit {
+        align-self: unset;
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 630px) {
+
+    .submit-heading {
+        text-align: center;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .submit-card {
+        padding: 20px 30px;
+    }
+
+}

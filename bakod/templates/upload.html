@@ -2,26 +2,38 @@
 
 {% block content%}
 
-    <h2>Uplaod Image for Classification</h2>
+{% load static %}
 
+    <nav>
+        <a href="{% url 'landing' %}" class="logo">BAKOD AI <span><img src="{% static 'images/leaf-solid.svg' %}" alt="leaf"></span></a>
+    </nav>
+
+    <div class="spacer">
+        <div class="submit-card">
+            <h2 class="submit-heading">Upload Image for Classification</h2>
+            
+            <br>
+        
+            <form method="post" enctype="multipart/form-data" action="predictImage">
+                {% csrf_token %}
+                <div class="input">
+                    <h1>Upload Image File Here:</h1>
+                    <div>
+                        <label for="fname">UPLOAD AN IMAGE</label> 
+                        <input id="fname" name="filePath" type="file">
+                    </div>
+                </div> 
+                <input type="submit" class="submit" value="Submit" >
+            </form>
     
-    <br>
-   
-    <form method="post" enctype="multipart/form-data" action="predictImage">
-  
- {% csrf_token %}
- <div class="col-md-4 col-sm-4"><label for="fname">Upload Image File Here:</label> </div> <input name="filePath" type="file"><br><br>
- <br>
-
- 
- <input type="submit" value="Submit" ></div>
-
- <h2>The classification of the image is {{predictedLabel}}</h2>
- <img src={{filePathName}} alt='imagename'>
- {{filePathName}}
-
-</form>
-<br>
-
+            <hr >
+            <div class="result">
+                <img src={{filePathName}} alt='imagename' class="chosen-img">
+                {{filePathName}}
+                <h2>The classification of the image is <span>{{predictedLabel}}</span></h2>
+            </div>
+    
+        </div>
+    </div>
 
 {% endblock %}

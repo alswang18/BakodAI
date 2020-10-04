@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from inference import views
+from landing import views as landingViews
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^$', views.index, name='imageupload'),
+    url('^$', landingViews.index, name='landing'),
+    url('upload/', views.index, name='imageupload'),
     url('predictImage', views.predictImage, name='predictImage')
 ]
 
