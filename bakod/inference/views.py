@@ -56,7 +56,7 @@ tempchildren.append(myhead(512,17))
 my_r18=nn.Sequential(*tempchildren)
 
 model=my_r18
-weighties = torch.load('/Users/jib/Documents/models/fastai-rn18.pth',map_location=torch.device('cpu'))
+weighties = torch.load('model/fastai-rn18.pth',map_location=torch.device('cpu'))
 model.load_state_dict(weighties['state_dict'])
 model.eval()
 
