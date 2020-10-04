@@ -80,7 +80,7 @@ def predictImage(request):
     filePathName=fs.url(filePathName)
     testimage='.'+filePathName
     from PIL import Image
-    imgplanet = Image.open("testimage").convert('RGB')
+    imgplanet = Image.open(testimage).convert('RGB')
     preprocess = transforms.Compose([
             transforms.Resize(128),
             transforms.CenterCrop(128),
@@ -96,7 +96,10 @@ def predictImage(request):
     tensor_list.tolist()[0]
     tensor_tolist = tensor_list.tolist()[0]
     indx = [i for i in range(len(tensor_tolist)) if tensor_tolist[i]>0]
-    [classes[i] for i in indx ]
+    predictions = [classes[i] for i in indx ]
+    predictedLabel=""
+    for i in predictions:
+        predictedLabel+=i+" "
     context={'filePathName':filePathName,'predictedLabel':predictedLabel}
     return render(request, 'upload.html', context)
 
