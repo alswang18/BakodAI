@@ -79,8 +79,24 @@ def predictImage(request):
     filePathName=fs.save(fileObj.name,fileObj)
     filePathName=fs.url(filePathName)
     testimage='.'+filePathName
-
-    testimgtensor = t
+    from PIL import Image
+    imgplanet = Image.open("testimage").convert('RGB')
+    preprocess = transforms.Compose([
+            transforms.Resize(128),
+            transforms.CenterCrop(128),
+            transforms.ToTensor(),
+            transforms.Normalize(
+            mean=[0.485, 0.456, 0.406],
+            std=[0.229, 0.224, 0.225]
+        )])
+    imgplanet_preprocessed = preprocess(imgplanet)
+    imgplanet_tensor = torch.unsqueeze(imgplanet_preprocessed, 0)
+    tensor_list= model.forward(imgplanet_tensor)
+    tensor_list.tolist()
+    tensor_list.tolist()[0]
+    tensor_tolist = tensor_list.tolist()[0]
+    indx = [i for i in range(len(tensor_tolist)) if tensor_tolist[i]>0]
+    [classes[i] for i in indx ]
     context={'filePathName':filePathName,'predictedLabel':predictedLabel}
     return render(request, 'upload.html', context)
 
