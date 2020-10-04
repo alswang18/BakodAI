@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+     <html lang="en">
+          <head>
+
+               <title>BAKOD AI</title>
+
+               <meta charset="UTF-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+               <meta name="description" content="">
+               <meta name="keywords" content="">
+               <meta name="author" content="Tooplate">
+               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+               <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+               <link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+               <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" >
+               <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" >
+
+               <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&family=PT+Sans&family=Raleway&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+               <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+          
+               <!-- MAIN CSS -->
+
+               <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+          </head>
+
+          <!-- HOME -->
+
+
+          {% block content%}
+          {% endblock %}
+
+
+          <!-- FOOTER -->
+          <footer>
+               <p>
+               &copy; 2020 BAKOD AI. All Rights Reserved.
+               </p>
+          </footer>
+
+          <!-- SCRIPTS -->
+          <script  src="{% static 'js/jquery.js' %}"></script>
+          <script  src="{% static 'js/bootstrap.min.js' %}"></script>
+          <script  src="{% static 'js/jquery.sticky.js' %}"></script>
+          <script  src="{% static 'js/jquery.stellar.min.js' %}"></script>
+          <script  src="{% static 'js/wow.min.js' %}"></script>
+          <script  src="{% static 'js/smoothscroll.js' %}"></script>
+          <script  src="{% static 'js/owl.carousel.min.js' %}"></script>
+          <script  src="{% static 'js/custom.js' %}"></script>
+
+     </body>
+</html>
