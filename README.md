@@ -32,12 +32,13 @@ We believed that forests could be easily monitored by satellites as they are alw
 The model was deployed using Django, a Python-based web framework, to give the team and future developers the ability to customize the whole web app into the needed parts for their specific needs. Django has allowed our team to separate each functionality into clearly defined apps that would enable people to make modular versions of our final product.
 
 ## Instructions on Running BakodAI
-1. Clone Directory to Local Machine
-2. Navigate to root folder "BakodAI"
-3. Open root folder in your terminal
-4. enter `cd bakod` to terminal to navigate to the bakod directory
-5. enter `python manage.py runserver` open webapp on your local machine
-6. find `Starting development server at -server address-` click the server address provided in your terminal
-7. Navigate throughout the webapp as if it is a website.
+1. Clone Directory to Local Machine.
+2. Navigate to root folder "BakodAI".
+3. Open root folder in your terminal.
+4. enter `pip install -r requirements.txt` to install all required modules on your machine.
+5. enter `cd bakod` to terminal to navigate to the bakod directory.
+6. enter `python manage.py runserver` open webapp on your local machine.
+7. find `Starting development server at -server address-` click the server address provided in your terminal.
+8. Navigate throughout the webapp as if it is a website to test our proof of concept.
 
 The team hopes you enjoy our proof of concept!
