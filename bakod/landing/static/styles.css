@@ -494,6 +494,13 @@ footer p {
     
 }
 
+@media screen and (max-width: 350px) {
+    .hero h1 {
+        font-size: 42px;
+        line-height: 51px;
+    }
+}
+
 /************************************************ UPLOAD PAGE *************************************************/
 
 .spacer {
