@@ -555,9 +555,12 @@ footer p {
     font-size: 20px;
     line-height: 30px;
     color: #3CB371;
-    text-decoration: underline;
     margin-bottom: 0;
     cursor: pointer;
+}
+
+.input div label:hover {
+    text-decoration: underline;
 }
 
 .submit {
