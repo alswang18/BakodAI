@@ -1,28 +1,18 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&family=PT+Sans&family=Raleway&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-
-    
-    <title>BAKOD AI</title>
-</head>
-<body>
-
     <nav>
-        <a href="#" class="logo">BAKOD AI <span><img src="{% static 'images/leaf-solid.svg' %}" alt="leaf"></span></a>
-        <a href="#" class="models">GET STARTED</a>
+        <a href="{% url 'landing' %}" class="logo">BAKOD AI <span><img src="{% static 'images/leaf-solid.svg' %}" alt="leaf"></span></a>
+        <a href="{% url 'imageupload' %}" class="models">GET STARTED</a>
     </nav>
 
     <div class="hero">
         <h1>Natura Sit Vitae</h1>
         <p>BAKOD AI strongly believes that “Nature is Life”.</p>
-        <a href="#" class="models-hidden">GET STARTED</a>
+        <a href="{% url 'imageupload' %}" class="models-hidden">GET STARTED</a>
     </div>
 
     <div class="summary">
@@ -123,10 +113,4 @@
         <img src="{% static 'images/safar-safarov-LKsHwgzyk7c-unsplash 1.png' %}" alt="code">
     </div>
 
-    <footer>
-        <p>
-            &copy; 2020 BAKOD AI. All Rights Reserved.
-        </p>
-    </footer>
-</body>
-</html>
+{% endblock %}

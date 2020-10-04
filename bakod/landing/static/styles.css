@@ -27,6 +27,11 @@ nav {
     text-decoration: none;
 }
 
+.logo:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .logo img {
     filter: invert(1);
     width: 15px;
@@ -50,6 +55,7 @@ nav {
 .models:hover {
     background-color: #FFFFFF;
     color: #3CB371;
+    text-decoration: none;
 }
 
 .hero {
@@ -329,6 +335,7 @@ footer p {
     color: #FFFFFF;
 }
 
+
 @media screen and (max-width: 1000px){
     .save {
         flex-direction: column-reverse;
@@ -443,15 +450,6 @@ footer p {
     .logo {
         margin-left: 10px;
     }
-    /* .logo {
-        font-size: 25px;
-    }
-
-    .logo img {
-        width: 15px;
-        top: -17px;
-        left: -10px;
-    } */
 
     .models {
         display: none;
@@ -492,4 +490,168 @@ footer p {
         line-height: 19px;
     }
     
+}
+
+/************************************************ UPLOAD PAGE *************************************************/
+
+.spacer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 30px);
+}
+
+.submit-card {
+    width: 80%;
+    border: 5px solid #3CB371;
+    padding: 20px 60px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 70px;
+}
+
+.submit-heading {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 71px;
+    color: #3CB371;
+}
+
+.submit-card form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.input {
+    width: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.input h1 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3CB371;
+    margin: 0 50px 0 0;
+}
+
+.input div #fname {
+    display: none;
+}
+
+.input div label {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3CB371;
+    text-decoration: underline;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.submit {
+    align-self: flex-end;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3CB371;
+    background-color: white;
+    padding: 5px 25px;
+    border: 5px solid #3CB371;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.submit:hover {
+    background-color: #3CB371;
+    color: #FFFFFF;
+}
+
+hr {
+    width: 100%;
+    height: 5px;
+    margin: 70px 0 50px;
+    background-color: #3CB371;
+}
+
+.chosen-img {
+    width: 100%;
+}
+
+.result {
+    width: 100%;
+}
+
+.result h2 {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3CB371;
+}
+
+.result h2 span {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .submit-card {
+        width: 90%;
+    }
+
+    .submit-heading {
+        text-align: center;
+        font-size: 32px;
+        line-height: 51px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .submit-card form, .input {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input h1 {
+        display: none;
+    }
+
+    .input div label {
+        text-align: center;
+    }
+
+    .submit {
+        align-self: unset;
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 630px) {
+
+    .submit-heading {
+        text-align: center;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .submit-card {
+        padding: 20px 30px;
+    }
+
 }

@@ -23,8 +23,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('', landingViews.index, name='landing'),
-    url('^$', views.index, name='imageupload'),
+    url('^$', landingViews.index, name='landing'),
+    url('upload/', views.index, name='imageupload'),
     url('predictImage', views.predictImage, name='predictImage')
 ]
 
