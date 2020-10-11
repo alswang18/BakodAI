@@ -30,3 +30,15 @@ Our team created this project based on how environmentalists protect wildlife in
 We believed that forests could be easily monitored by satellites as they are always under their field of vision. On top of that, an image classification machine learning model is integrated to identify a forest area's health. The team used a pre-trained PyTorch model named Resnet (specifically Resent18) and fed multiple satellite images of the Amazon rainforest to train the model to identify the Amazon rainforest landscape and look for deforestation activities.
 
 The model was deployed using Django, a Python-based web framework, to give the team and future developers the ability to customize the whole web app into the needed parts for their specific needs. Django has allowed our team to separate each functionality into clearly defined apps that would enable people to make modular versions of our final product.
+
+## Instructions on Running BakodAI
+1. Clone Directory to Local Machine.
+2. Navigate to root folder "BakodAI".
+3. Open root folder in your terminal.
+4. enter `pip install -r requirements.txt` to install all required modules on your machine.
+5. enter `cd bakod` to terminal to navigate to the bakod directory.
+6. enter `python manage.py runserver` open webapp on your local machine.
+7. find `Starting development server at -server address-` click the server address provided in your terminal.
+8. Navigate throughout the webapp as if it is a website to test our proof of concept.
+
+The team hopes you enjoy our proof of concept!
