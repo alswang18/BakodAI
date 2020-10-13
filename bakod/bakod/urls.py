@@ -24,8 +24,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$', landingViews.index, name='landing'),
-    url('upload/', views.index, name='imageupload'),
-    url('predictImage', views.predictImage, name='predictImage')
+    url('upload/', views.index, name='imageupload')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

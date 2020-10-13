@@ -14,7 +14,7 @@
             
             <br>
         
-            <form method="post" enctype="multipart/form-data" action="predictImage">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="input">
                     <h1>Upload Image File Here:</h1>
@@ -25,7 +25,7 @@
                 </div> 
                 <input type="submit" class="submit" value="Submit" >
             </form>
-    
+            <p id="msg">Please select an image first. Then press submit.</p>
             <hr >
             <div class="result">
                 <img src={{filePathName}} alt='imagename' class="chosen-img">
@@ -36,4 +36,25 @@
         </div>
     </div>
 
+    <script>
+        let upload = false;
+        document.getElementById("msg").style.visibility = "hidden";
+        document.getElementById("msg").style.color = "ff794d";
+        document.getElementById("fname").required = true;
+
+        document.getElementById("fname").addEventListener("change", (event) => {
+            console.log(!!event.target.files[0])
+            if(event.target.files[0]){
+                document.getElementbyId("msg").style.visibility = "hidden";
+                uploaded = true
+            }
+        })
+        
+        document.querySelector(".submit").addEventListener("click", () => {
+            if(!uploaded){
+                document.getElementById("msg").style.visibility = "visible";
+            }
+        })
+
+    </script>
 {% endblock %}

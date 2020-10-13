@@ -67,41 +67,39 @@ classes=['agriculture','artisinal_mine','bare_ground','blooming','blow_down','cl
 'partly_cloudy','primary','road','selective_logging','slash_burn','water']
 
 def index(request):
-    context={'a':1}
-    return render(request, 'upload.html', context)
+    if request.method == 'POST' and request.FILES['filePath']:
+        print(request.POST.dict())
+        print(request.FILES['filePath'])
 
-def predictImage(request):
-    print(request.POST.dict())
-    print(request.FILES['filePath'])
-
-    fileObj= request.FILES['filePath']
-    fs = FileSystemStorage()
-    filePathName=fs.save(fileObj.name,fileObj)
-    filePathName=fs.url(filePathName)
-    testimage='.'+filePathName
-    from PIL import Image
-    imgplanet = Image.open(testimage).convert('RGB')
-    preprocess = transforms.Compose([
-            transforms.Resize(128),
-            transforms.CenterCrop(128),
-            transforms.ToTensor(),
-            transforms.Normalize(
-            mean=[0.485, 0.456, 0.406],
-            std=[0.229, 0.224, 0.225]
-        )])
-    imgplanet_preprocessed = preprocess(imgplanet)
-    imgplanet_tensor = torch.unsqueeze(imgplanet_preprocessed, 0)
-    tensor_list= model.forward(imgplanet_tensor)
-    tensor_list.tolist()
-    tensor_list.tolist()[0]
-    tensor_tolist = tensor_list.tolist()[0]
-    indx = [i for i in range(len(tensor_tolist)) if tensor_tolist[i]>0]
-    predictions = [classes[i] for i in indx ]
-    predictedLabel=""
-    for i in predictions:
-        predictedLabel+=i+" "
-    context={'filePathName':filePathName,'predictedLabel':predictedLabel}
-    return render(request, 'upload.html', context)
+        fileObj= request.FILES['filePath']
+        fs = FileSystemStorage()
+        filePathName=fs.save(fileObj.name,fileObj)
+        filePathNameURL=fs.url(filePathName)
+        testimage='.'+filePathNameURL
+        from PIL import Image
+        imgplanet = Image.open(testimage).convert('RGB')
+        preprocess = transforms.Compose([
+                transforms.Resize(128),
+                transforms.CenterCrop(128),
+                transforms.ToTensor(),
+                transforms.Normalize(
+                mean=[0.485, 0.456, 0.406],
+                std=[0.229, 0.224, 0.225]
+            )])
+        imgplanet_preprocessed = preprocess(imgplanet)
+        imgplanet_tensor = torch.unsqueeze(imgplanet_preprocessed, 0)
+        tensor_list= model.forward(imgplanet_tensor)
+        tensor_list.tolist()
+        tensor_list.tolist()[0]
+        tensor_tolist = tensor_list.tolist()[0]
+        indx = [i for i in range(len(tensor_tolist)) if tensor_tolist[i]>0]
+        predictions = [classes[i] for i in indx ]
+        predictedLabel=""
+        for i in predictions:
+            predictedLabel+=i+" "
+        context={'filePathName':filePathNameURL,'predictedLabel':predictedLabel}
+        return render(request, 'upload.html', context)
+    return render(request, 'upload.html')
 
 def viewDataBase(request):
     import os
