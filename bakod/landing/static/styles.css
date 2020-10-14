@@ -664,8 +664,8 @@ hr {
 }
 
 .tags img {
-    width: 30%;
-    margin: calc(10% / 6);
+    width: 19%;
+    margin: calc(5% / 10);
 }
 
 @media screen and (max-width: 900px) {
