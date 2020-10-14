@@ -658,6 +658,16 @@ hr {
     text-decoration: underline;
 }
 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags img {
+    width: 30%;
+    margin: calc(10% / 6);
+}
+
 @media screen and (max-width: 900px) {
     .submit-card {
         width: 90%;
@@ -690,6 +700,11 @@ hr {
         margin-top: 40px;
     }
 
+    .tags img {
+        width: 45%;
+        margin: calc(10% / 4);
+    }
+
 }
 
 @media screen and (max-width: 630px) {
@@ -706,6 +721,11 @@ hr {
 
     .submit-card {
         padding: 20px 30px;
+    }
+
+    .tags img {
+        width: 95%;
+        margin: 2.5%;
     }
 
 }
