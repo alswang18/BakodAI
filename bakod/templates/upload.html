@@ -30,7 +30,48 @@
             <div class="result">
                 <img src={{filePathName}} alt='imagename' class="chosen-img">
                 {{filePathName}}
-                <h2>The classification of the image is <span>{{predictedLabel}}</span></h2>
+                <h2>The classification of the image is: </h2>
+                
+                <div class="tags">
+                    {% for tag in predictedLabel %}
+                        {% if tag == "agriculture" %}
+                            <img src="{% static 'images/agriculture.png' %}" alt="agriculture" />
+                        {% elif tag == "artisinal_mine" %}
+                            <img src="{% static 'images/small_mine.png' %}" alt="artisinal_mine" />
+                        {% elif tag == "bare_ground" %}
+                            <img src="{% static 'images/bare_ground.png' %}" alt="bare_ground" />
+                        {% elif tag == "blooming" %}
+                            <img src="{% static 'images/blooming.png' %}" alt="blooming" />
+                        {% elif tag == "blow_down" %}
+                            <img src="{% static 'images/blow_down.png' %}" alt="blow_down" />
+                        {% elif tag == "clear" %}
+                            <img src="{% static 'images/clear.png' %}" alt="clear" />
+                        {% elif tag == "cloudy" %}
+                            <img src="{% static 'images/cloudy.png' %}" alt="cloudy" />
+                        {% elif tag == "conventional_mine" %}
+                            <img src="{% static 'images/big_mine.png' %}" alt="conventional_mine" />
+                        {% elif tag == "cultivation" %}
+                            <img src="{% static 'images/cultivation.png' %}" alt="cultivation" />
+                        {% elif tag == "habitation" %}
+                            <img src="{% static 'images/habit.png' %}" alt="habitation" />
+                        {% elif tag == "haze" %}
+                            <img src="{% static 'images/haze.png' %}" alt="haze" />
+                        {% elif tag == "partly_cloudy" %}
+                            <img src="{% static 'images/partly_cloudy.png' %}" alt="partly_cloudy" />
+                        {% elif tag == "primary" %}
+                            <img src="{% static 'images/primary.png' %}" alt="primary" />
+                        {% elif tag == "road" %}
+                            <img src="{% static 'images/road.png' %}" alt="road" />
+                        {% elif tag == "selective_logging" %}
+                            <img src="{% static 'images/logging.png' %}" alt="selective_logging" />
+                        {% elif tag == "slash_burn" %}
+                            <img src="{% static 'images/slash_burn.png' %}" alt="slash_burn" />
+                        {% elif tag == "water" %}
+                            <img src="{% static 'images/water.png' %}" alt="water" />
+                        {% endif %}
+                    {% endFor %}
+                </div>
+                
             </div>
     
         </div>
