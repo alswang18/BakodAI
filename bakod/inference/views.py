@@ -94,10 +94,7 @@ def index(request):
         tensor_tolist = tensor_list.tolist()[0]
         indx = [i for i in range(len(tensor_tolist)) if tensor_tolist[i]>0]
         predictions = [classes[i] for i in indx ]
-        predictedLabel=""
-        for i in predictions:
-            predictedLabel+=i+" "
-        context={'filePathName':filePathNameURL,'predictedLabel':predictedLabel}
+        context={'filePathName':filePathNameURL,'predictedLabel':predictions}
         return render(request, 'upload.html', context)
     return render(request, 'upload.html')
 
