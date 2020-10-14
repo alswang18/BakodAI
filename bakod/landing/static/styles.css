@@ -661,7 +661,6 @@ hr {
 .tags {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 .tags img {
