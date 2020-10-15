@@ -28,7 +28,7 @@
             <p id="msg">Please select an image first. Then press submit.</p>
             <hr >
             <div class="result">
-                <img src={{filePathName}} alt='imagename' class="chosen-img">
+                <img class="chosen-img">
                 <h2>The classification of the image is: </h2>
                 
                 <div class="tags">
@@ -83,8 +83,13 @@
         document.getElementById("fname").required = true;
 
         document.getElementById("fname").addEventListener("change", (event) => {
-            console.log(!!event.target.files[0])
             if(event.target.files[0]){
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var output = document.querySelector('.chosen-img');
+                    output.src = reader.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
                 document.getElementbyId("msg").style.visibility = "hidden";
                 uploaded = true
             }

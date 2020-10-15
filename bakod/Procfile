@@ -1,1 +1,1 @@
-web: gunicorn BakodAI.wsgi --log-file -
+web: gunicorn bakod.wsgi
