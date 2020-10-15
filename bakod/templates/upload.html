@@ -23,11 +23,14 @@
                         <input id="fname" name="filePath" type="file">
                     </div>
                 </div> 
-                <input type="submit" class="submit" value="Submit" >
+                <input type="submit" class="submit" value="Annotate" >
             </form>
-            <p id="msg">Please select an image first. Then press submit.</p>
+            <p id="msg">Please select an image first. Then press "Annotate".</p>
             <hr >
             <div class="result">
+                {% if predictedLabel is not None %}
+                <img src={{filePathName}} class="chosen-img">
+                {% endif %}
                 <img class="chosen-img">
                 <h2>The classification of the image is: </h2>
                 
@@ -78,27 +81,32 @@
 
     <script>
         let upload = false;
-        document.getElementById("msg").style.visibility = "hidden";
-        document.getElementById("msg").style.color = "ff794d";
+        let currentPhoto;
+        var output = document.querySelector('.chosen-img');
+        var msg = document.querySelector("#msg")
+
+        msg.style.visibility = "hidden";
+        msg.style.color = "#ff794d";
         document.getElementById("fname").required = true;
 
         document.getElementById("fname").addEventListener("change", (event) => {
             if(event.target.files[0]){
                 var reader = new FileReader();
                 reader.onload = function() {
-                    var output = document.querySelector('.chosen-img');
                     output.src = reader.result;
+                    currentPhoto = reader.result;
                 }
                 reader.readAsDataURL(event.target.files[0]);
-                document.getElementbyId("msg").style.visibility = "hidden";
-                uploaded = true
+                msg.style.visibility = "hidden";
+                upload = true
             }
         })
         
         document.querySelector(".submit").addEventListener("click", () => {
-            if(!uploaded){
-                document.getElementById("msg").style.visibility = "visible";
+            if(!upload){
+                msg.style.visibility = "visible";
             }
+            output.src = currentPhoto;
         })
 
     </script>
