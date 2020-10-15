@@ -28,9 +28,6 @@
             <p id="msg">Please select an image first. Then press "Annotate".</p>
             <hr >
             <div class="result">
-                {% if predictedLabel is not None %}
-                <img src={{filePathName}} class="chosen-img">
-                {% endif %}
                 <img class="chosen-img">
                 <h2>The classification of the image is: </h2>
                 
@@ -82,9 +79,12 @@
     <script>
         let upload = false;
         let currentPhoto;
+        let filePath = "{{ filePathName }}"
         var output = document.querySelector('.chosen-img');
         var msg = document.querySelector("#msg")
-
+        if(filePath){
+            output.src=filePath
+        }
         msg.style.visibility = "hidden";
         msg.style.color = "#ff794d";
         document.getElementById("fname").required = true;
