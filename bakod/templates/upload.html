@@ -79,24 +79,36 @@
     <script>
         let upload = false;
         let currentPhoto;
-        let filePath = "{{ filePathName }}"
         var output = document.querySelector('.chosen-img');
         var msg = document.querySelector("#msg")
-        if(filePath){
-            output.src=filePath
-        }
         msg.style.visibility = "hidden";
         msg.style.color = "#ff794d";
         document.getElementById("fname").required = true;
+
+        if(sessionStorage.getItem('uploadPic') && "{{predictedLabel}}"){
+            output.src = "data:image/png;base64," + sessionStorage.getItem('uploadPic');
+        }
 
         document.getElementById("fname").addEventListener("change", (event) => {
             if(event.target.files[0]){
                 var reader = new FileReader();
                 reader.onload = function() {
                     output.src = reader.result;
-                    currentPhoto = reader.result;
+                    const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+                    sessionStorage.setItem('uploadPic', base64String);
                 }
                 reader.readAsDataURL(event.target.files[0]);
+
+                function removeAllChildNodes(parent) {
+                    while (parent.firstChild) {
+                        parent.removeChild(parent.firstChild);
+                    }
+                }
+
+                const container = document.querySelector('.tags');
+                removeAllChildNodes(container);
+
+
                 msg.style.visibility = "hidden";
                 upload = true
             }
@@ -106,7 +118,6 @@
             if(!upload){
                 msg.style.visibility = "visible";
             }
-            output.src = currentPhoto;
         })
 
     </script>
